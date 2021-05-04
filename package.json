@@ -1,0 +1,19 @@
+{
+  "name": "enhancify",
+  "version": "1.0.0",
+  "description": "```js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksandar-b/Enhancify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksandar-b/Enhancify/issues"
+  },
+  "homepage": "https://github.com/aleksandar-b/Enhancify#readme"
+}
