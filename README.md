@@ -1,4 +1,18 @@
-Enhance object with hooks.
+Enhance object methods with hooks. 
+
+#### Before method is called:
+```js
+const data = { sayHello: () => {} };
+
+const wrapped = enhancify(data)
+                  .before('sayHello', ({ propKey, args}) => { 
+                    logger.info('calling ', propKey, 'with args', args);
+                  })
+                  .build();
+
+wrapped.sayHello(); 
+```
+
 Usefull for 
 
 - Logging
@@ -23,7 +37,7 @@ const contactService = {
   },
 };
 
-const contact = contactService(contact)
+const contact = enhancify(contactService)
                 .before('*', (data) => {
                    logger.info('invoking', data.propKey, 'with args', data.args);
                  })
