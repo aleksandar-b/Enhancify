@@ -13,7 +13,7 @@ const wrapped = enhancify(data)
 wrapped.sayHello('hi', 'there'); // calling sayHello with args ['hi', 'there']
 ```
 
-Usefull for 
+#### Usefull for 
 
 - Logging
 - Elastic search
@@ -22,6 +22,8 @@ Usefull for
 - Metrics
 - Caching
 
+
+#### Example
 ```js
 const enhancify = require('enhancify');
 
@@ -65,3 +67,10 @@ contact.create({ name: "Paul" });
 contact.update( name: "Paul", id: "1" });
 contact.read({ id: "1" });
 ```
+
+
+#### TODO
+
+- [] On error hook
+- [] On missing method
+- [] Ossify / Freeze object
