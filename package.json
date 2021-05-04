@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "hooks",
+    "aop",
+    "aspect oriented programming"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aleksandar-b/Enhancify.git"

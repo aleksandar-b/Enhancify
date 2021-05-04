@@ -1,8 +1,17 @@
-```js
+Enhance object with hooks.
+Usefull for 
 
+- Logging
+- Elastic search
+- Event dispatching
+- Analytics
+- Metrics
+- Caching
+
+```js
 const enhancify = require('enhancify');
 
-const contact = { 
+const contactService = { 
   create: (record) => { 
     return contactRepository.create(record);
   },
@@ -14,7 +23,7 @@ const contact = {
   },
 };
 
-const contactService = enhancify(contact)
+const contact = contactService(contact)
                 .before('*', (data) => {
                    logger.info('invoking', data.propKey, 'with args', data.args);
                  })
@@ -38,7 +47,7 @@ const contactService = enhancify(contact)
                  })
                 .build();
 
-contactService.create({ name: "Paul" });
-contactService.update( name: "Paul", id: "1" });
-contactService.read({ id: "1" });
+contact.create({ name: "Paul" });
+contact.update( name: "Paul", id: "1" });
+contact.read({ id: "1" });
 ```
