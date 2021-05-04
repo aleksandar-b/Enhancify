@@ -74,3 +74,4 @@ contact.read({ id: "1" });
 - [] On error hook
 - [] On missing method
 - [] Ossify / Freeze object
+- [] Regex pattern
