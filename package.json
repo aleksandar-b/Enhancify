@@ -9,6 +9,7 @@
   "keywords": [
     "hooks",
     "aop",
+    "proxy",
     "aspect oriented programming"
   ],
   "repository": {

@@ -42,7 +42,6 @@ const enhancify = (obj) => {
               const result = origMethod.apply(target, args);
               handleAfterHooks({ propKey, args, result });
 
-              console.log(result);
               return result;
           };
         }

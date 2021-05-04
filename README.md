@@ -1,4 +1,6 @@
-Enhance object methods with hooks. 
+### Enhance object methods with hooks.
+Hook into any method call in an object. Using JavaScript Proxy spec.
+
 
 #### Before method is called:
 ```js
@@ -33,10 +35,7 @@ const contactService = {
   },
   update: (record) => {
     return contactRepository.update(record);
-  },
-  read () {
-    return contactRepository.read(record);
-  },
+  }
 };
 
 const contact = enhancify(contactService)
@@ -55,17 +54,16 @@ const contact = enhancify(contactService)
                 .after('create', () => {
                    analytics.send(userId, 'created_contact');
                 })
-                .after('create', (data) => {
+                .after('update', (data) => {
                    elasticSearch.indexPost(data.result);
                  })
-                .after('create', (data) => {
-                   pubsub.emit('contact_created', data.result.id);
+                .after('update', (data) => {
+                   pubsub.emit('contact_updated', data.result);
                  })
                 .build();
 
 contact.create({ name: "Paul" });
-contact.update( name: "Paul", id: "1" });
-contact.read({ id: "1" });
+contact.update( name: "Paul Vocker", id: "1" });
 ```
 
 
