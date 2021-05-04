@@ -10,7 +10,7 @@ const wrapped = enhancify(data)
                   })
                   .build();
 
-wrapped.sayHello(); 
+wrapped.sayHello('hi'); // calling sayHello with args ['hi']
 ```
 
 Usefull for 
